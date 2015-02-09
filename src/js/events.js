@@ -124,33 +124,11 @@ $(document).ready(function() {
   //pass true for debug false for no debug
   window.myRackAnalytics = new MyRackAnalytics(utag_data, debug);
   
-  
   /****************************************************
   Event Delegation - REQUIRES jQuery 1.4.2+
   ****************************************************/
 
-  // WHY CAN'T THIS BE TESTED!?
-  // var rsaEventHandler = function(event) {
-  //   var el = event.target || event.srcElement;
-  // 
-  //   if (el) {
-  //     var $el = $(el);
-  // 
-  //     if ($el.hasClass('rsa-custom-event')) {
-  //       window.myRackAnalytics.eventCustomClick(el);
-  //     } else if ($el.is('a')) {
-  //       window.myRackAnalytics.eventHyperlinkClick(el);
-  //     } else if ($el.is('button')) {
-  //       window.myRackAnalytics.eventButtonClick(el);
-  //     } else if ($el.hasClass('rs-cog') || $el.hasClass('dropdown-toggle')) {
-  //       window.myRackAnalytics.eventCogClick(el);
-  //     }
-  //   }
-  // };
-  // 
-  // window.document.body.addEventListener('click', rsaEventHandler, true);
-  
-  window.document.body.addEventListener('click', function(event) {
+  var rsaEventHandler = function(event) {
     var el = event.target || event.srcElement;
   
     if (el) {
@@ -166,12 +144,11 @@ $(document).ready(function() {
         window.myRackAnalytics.eventCogClick(el);
       }
     }
-  }, true);
+  };
+  
+  window.document.body.addEventListener('click', rsaEventHandler, true);
 
-  // window.document.body.addEventListener('click', function(event) { 
-  //   window.myRackAnalytics.utag_data.account_id = 123456;
-  // });
-
+  //TODO: Determine if addEventListener 'useCapture' function is ideal. Otherwise, use this code:
   // //Cog Click Handler
   // $('body').delegate('div.rs-cog.dropdown-toggle', 'click', function() {
   //   window.myRackAnalytics.eventCogClick(this);

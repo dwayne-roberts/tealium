@@ -3,7 +3,9 @@ var jsdom = require('jsdom').jsdom,
     helpers  = require('../helpers');
 
 describe('Event Tests', function() {
-  var $, win, analyticsObj;
+  var $,
+      win,
+      analyticsObj;
 
   beforeEach(function(callback) {
     jsdom.env({
@@ -24,8 +26,8 @@ describe('Event Tests', function() {
     it('utag_data initialized correctly', function() {
       expect(analyticsObj.utag_data.page_name).toBe('Events Tests');
       expect(analyticsObj.utag_data.account_id).toBe(862323);
-      expect(analyticsObj.utag_data.myrack_action).toBeDefined;
-      expect(analyticsObj.utag_data.myrack_metadata).toBeDefined;
+      expect(analyticsObj.utag_data.myrack_action).not.toBeDefined;
+      expect(analyticsObj.utag_data.myrack_metadata).not.toBeDefined;
     });
   
   });
@@ -259,6 +261,6 @@ describe('Event Tests', function() {
   
   });
 
-  //DYNAMIC TESTING
+  //TODO: DYNAMIC TESTING
 
 });
