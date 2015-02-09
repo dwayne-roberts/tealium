@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>Events Tests</title>
+    <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../src/js/events.js"></script>
+  </head>
+  <body>
+    
+    <!-- Button Tests -->
+    <div class="button-tests">
+
+      <!-- Simple Buttons -->
+      <button id="btn-simple-primary" class="primary-button">PRIMARY</button>
+      <button id="btn-simple-secondary" class="secondary-button">SECONDARY</button>
+      <button id="btn-simple-canon" class="rs-btn">CANON</button>
+      <button id="btn-simple-custom" class="rs-btn" data-rsa-custom="CUSTOM">NOT METADATA</button>
+
+      <!-- Portal Buttons-->
+      <button id="btn-nested" class="rs-btn">
+        <span>
+          <a href="#">
+            NESTED
+          </a>
+        </span>
+      </button>
+      <button id="btn-action" class="rs-btn rs-btn-action">
+        <span class="rs-cog"></span>
+          ACTION
+        <span class="rs-caret"></span>
+      </button>
+
+      <!-- Canon No-Text Buttons -->
+      <button class="rs-plus"></button>
+      <button class="rs-edit"></button>
+      <button class="rs-delete"></button>
+
+      <!-- Other No-Text Buttons -->
+      <button data-selector="both" id="btn-id-and-class" class="this-class-shouldnt-be-metadata"></button>
+      <button data-selector="id" id="btn-id"></button>
+      <button data-selector="class" class="btn-class"></button>
+      <button data-selector="none"></button>
+
+    </div>
+
+    <div class="hyperlink-tests">
+
+      <!-- Simple Tags -->
+      <a id="a-simple" href="#">SIMPLE</a>
+
+      <!-- Portal Tab Navs -->
+      <div class="myrs-tabs myrs-tabs-links">
+        <ul class="myrs-tabs-nav">
+          <li class="selected">
+            <a id="a-tab-1" href="#">TAB 1</a>
+          </li>
+          <li>
+            <a id="a-tab-2" href="#">TAB 2</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Portal Pagination  -->
+      <div class="myrs-pagination">
+        <span class="currentStep">1</span>
+        <a id="a-pagination-step" href="#" class="step">2</a>
+        <a id="a-pagination-nextlink" href="#" class="nextLink">Next</a>
+        <div class="rangeTotal">
+          <span class="myrs-pagination-total">
+            <strong>46</strong> Devices
+          </span>
+          <span class="myrs-pagination-maxvalue">
+            <a id="a-pagination-maxvalue" href="##" class="myrs-pagination-maxvalue-toggler"><strong>25</strong> Per Page</a>
+            <div class="myrs-pagination-maxvalue-list">
+              <ul>
+                <li><a id="a-pagination-opt-1" href="#"><strong>25</strong> Per Page</a></li>
+                <li><a id="a-pagination-opt-2" href="#"><strong>50</strong> Per Page</a></li>
+                <li><a id="a-pagination-all" href="#"><strong>All</strong></a></li>
+              </ul>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <!-- No-text tags -->
+      <a data-selector="both" id="a-id-and-class" class="this-class-shouldnt-be-metadata"></a>
+      <a data-selector="id" id="a-id"></a>
+      <a data-selector="class" class="a-class"></a>
+      <a data-selector="none"></a>
+
+    </div>
+
+    <div class="custom-tests">
+
+      <!-- Simple Custom Element -->
+      <div id="custom-div" class="rsa-custom-event" data-rsa-custom="DIV"></div>
+      <span id="custom-span" class="rsa-custom-event" data-rsa-custom="SPAN"></div>
+      <customElement id="custom-element" class="rsa-custom-event" data-rsa-custom="ELEMENT"></customElement>
+
+      <!-- Elements with Custom Metadata -->
+      <button id="custom-btn" class="rs-btn rsa-custom-event" data-rsa-custom="CUSTOM">NOT METADATA</button>
+
+    </div>
+
+    <!-- canon non-a non-button clickables? (e.g. rs-icon-status rs-status-ok) -->
+
+  </body>
+</html>

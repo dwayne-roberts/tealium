@@ -1,0 +1,21 @@
+{
+  "name": "tealium",
+  "version": "0.1.1",
+  "description": "Builds and packages Tealium event js for MyRack",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mcortez1497/tealium.git"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-jasmine": "^2.0.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.0.2"
+  }
+}
